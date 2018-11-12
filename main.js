@@ -7,13 +7,20 @@ function prepCircle(evt) {
     }
 }
 function endCircle() {
-    console.log('before');
-    console.log('after');
     document.removeEventListener('click', addCircle);
 }
 function addCircle(evt) {
     document.getElementById('map').innerHTML += makeCircle(evt.clientX, evt.clientY);
 }
 function makeCircle(x, y) {
-    return ("<circle cx = " + x + " cy=" + y + " r=10 />");
+    return ("<circle cx = " + x + " cy=" + y + " r=10 class='draggable' onload='makeDragable' />");
+}
+function makeDragable(evt) {
+    var circle = evt.target;
+    circle.addEventListener('mousedown', startDrag);
+    // circle.addEventListener('mousemove', drag);
+    // circle.addEventListener('mouseup', endDrag);
+}
+function startDrag() {
+    console.log('drag started');
 }

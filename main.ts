@@ -20,8 +20,19 @@ function addCircle(evt){
 
 function makeCircle(x: number, y: number){
     return (
-        `<circle cx = ${x} cy=${y} r=10 />`
+        `<circle cx = ${x} cy=${y} r=10 class='draggable'/>`
     )
 }
 
+// function makeDragable(evt){
+//     let circle = evt.target;
+
+//     circle.addEventListener('mousedown', startDrag);
+//     // circle.addEventListener('mousemove', drag);
+//     // circle.addEventListener('mouseup', endDrag);
+// }
+
+// function startDrag(){
+//     console.log('drag started')
+// }
 
