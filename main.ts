@@ -9,11 +9,10 @@ function prepCircle(evt){
     }
 }
 
-function endCircle(evt){
-    if(evt.shiftKey){
+function endCircle(){
         document.removeEventListener('click', addCircle )
     }
-}
+
 
 function addCircle(evt){
     document.getElementById('map').innerHTML += makeCircle(evt.clientX, evt.clientY);
